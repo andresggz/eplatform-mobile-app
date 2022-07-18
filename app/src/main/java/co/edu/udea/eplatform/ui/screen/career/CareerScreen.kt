@@ -14,18 +14,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import co.edu.udea.eplatform.R
-import co.edu.udea.eplatform.model.MyCareer
+import co.edu.udea.eplatform.model.MyRoadmap
 import java.time.LocalDate
 
-private val roadmaps: List<MyCareer> = listOf(
-    MyCareer(1, "Ruta de Back-end", "Ejemplo de descripcion", "/url.com", true, 23, LocalDate.now(), LocalDate.now()),
-    MyCareer(2, "Ruta de Front-end", "Ejemplo de descripcion", "/url.com", true, 23, LocalDate.now(), LocalDate.now()),
-    MyCareer(3, "Ruta de Android developer", "Ejemplo de descripcion", "/url.com", true, 23, LocalDate.now(), LocalDate.now()),
-    MyCareer(4, "Ruta de AI", "Ejemplo de descripcion larga", "/url.com", true, 23, LocalDate.now(), LocalDate.now())
+private val roadmaps: List<MyRoadmap> = listOf(
+    MyRoadmap(1, "Curso de Git", "Ejemplo de descripcion","details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
+    MyRoadmap(2, "Curso básico de Javascript", "Ejemplo de descripcion","detailes...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
+    MyRoadmap(3, "Curso intermedio de Javascript", "Ejemplo de descripcion","details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
+    MyRoadmap(4, "Curso básico de Nodejs", "Ejemplo de descripcion larga", "details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now())
 )
 
 
@@ -50,15 +49,15 @@ fun BodyContent(navController: NavController){
 }
 
 @Composable
-fun MyRoadmaps(roadmaps: List<MyCareer>, navController: NavController){
+fun MyRoadmaps(roadmaps: List<MyRoadmap>, navController: NavController){
     LazyColumn{
-        items(roadmaps) { career -> Roadmap(career = career, navController)
+        items(roadmaps) { roadmap -> Roadmap(roadmap = roadmap, navController)
         }
     }
 }
 
 @Composable
-fun Roadmap(career: MyCareer, navController: NavController){
+fun Roadmap(roadmap: MyRoadmap, navController: NavController){
     var context = LocalContext.current
     Row(modifier = Modifier
         .padding(8.dp)
@@ -75,9 +74,9 @@ fun Roadmap(career: MyCareer, navController: NavController){
         Column(modifier = Modifier
             .padding(start = 8.dp)
             .fillMaxWidth()) {
-            Text(text = career.name)
+            Text(text = roadmap.name)
             Spacer(modifier = Modifier.height(16.dp))
-            Text(text = career.description)
+            Text(text = roadmap.description)
         }
     }
 
