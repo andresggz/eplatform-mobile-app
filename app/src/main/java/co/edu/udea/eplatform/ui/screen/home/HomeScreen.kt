@@ -59,7 +59,7 @@ fun Career(career: MyCareer, navController: NavController){
     Row(modifier = Modifier
         .padding(8.dp)
         .clickable {
-            navController.navigate(route = AppScreens.CareerScreen.route)
+            navController.navigate(route = AppScreens.CareerScreen.route + "/" + career.id )
         }) {
 
        Image(

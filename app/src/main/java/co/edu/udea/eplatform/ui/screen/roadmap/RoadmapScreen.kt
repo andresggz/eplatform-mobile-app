@@ -1,5 +1,6 @@
 package co.edu.udea.eplatform.ui.screen.roadmap
 
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -34,6 +35,11 @@ private val courses: List<MyCourse> = listOf(
 
 @Composable
 fun RoadmapScreen(navController: NavController) {
+
+    val currentRoadmapId = navController.currentBackStackEntry?.arguments?.getString("roadmapId")
+
+    currentRoadmapId?.let { Log.i("RoadmapScreen current roadmap", it) }
+
     Scaffold(topBar = {
         TopAppBar {
             Icon(imageVector = Icons.Default.ArrowBack,

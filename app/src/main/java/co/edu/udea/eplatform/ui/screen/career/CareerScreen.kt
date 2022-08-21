@@ -1,5 +1,6 @@
 package co.edu.udea.eplatform.ui.screen.career
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -34,6 +35,11 @@ private val roadmaps: List<MyRoadmap> = listOf(
 
 @Composable
 fun CareerScreen(navController: NavController) {
+
+    val currentCareerId = navController.currentBackStackEntry?.arguments?.getString("careerId")
+
+    currentCareerId?.let { Log.i("CareerScreen current career", it) }
+
     Scaffold(topBar = {
         TopAppBar {
             Icon(imageVector = Icons.Default.ArrowBack,
@@ -96,7 +102,7 @@ fun Roadmap(roadmap: MyRoadmap, navController: NavController){
         .clickable {
             //val toast = Toast.makeText(context, "Se hizo click", Toast.LENGTH_LONG)
             //toast.show()
-            navController.navigate(route = AppScreens.RoadmapScreen.route)
+            navController.navigate(route = AppScreens.RoadmapScreen.route + "/" + roadmap.id)
         }) {
 
         Image(

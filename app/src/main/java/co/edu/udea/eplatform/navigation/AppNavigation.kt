@@ -18,10 +18,10 @@ fun AppNavigation() {
         composable(route = AppScreens.HomeScreen.route){
             HomeScreen(navController)
         }
-        composable(route = AppScreens.CareerScreen.route){
+        composable(route = AppScreens.CareerScreen.route + "/{careerId}"){
             CareerScreen(navController)
         }
-        composable(route = AppScreens.RoadmapScreen.route){
+        composable(route = AppScreens.RoadmapScreen.route + "/{roadmapId}"){
             RoadmapScreen(navController)
         }
     }
