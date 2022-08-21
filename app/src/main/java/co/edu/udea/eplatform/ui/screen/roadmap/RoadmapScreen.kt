@@ -1,5 +1,6 @@
-package co.edu.udea.eplatform.ui.screen.career
+package co.edu.udea.eplatform.ui.screen.roadmap
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -20,27 +21,26 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import co.edu.udea.eplatform.R
-import co.edu.udea.eplatform.model.MyRoadmap
-import co.edu.udea.eplatform.navigation.AppScreens
+import co.edu.udea.eplatform.model.MyCourse
 import java.time.LocalDate
 
-private val roadmaps: List<MyRoadmap> = listOf(
-    MyRoadmap(1, "Ruta de .Net Core", "Ejemplo de descripcion","details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
-    MyRoadmap(2, "Ruta de Java Developer", "Ejemplo de descripcion","detailes...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
-    MyRoadmap(3, "Ruta de Javascript developer", "Ejemplo de descripcion","details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
-    MyRoadmap(4, "Ruta de Android Developer", "Ejemplo de descripcion larga", "details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now())
+private val courses: List<MyCourse> = listOf(
+    MyCourse(1, "Curso de .Net Core", "Ejemplo de descripcion","details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
+    MyCourse(2, "Curso de Java Developer", "Ejemplo de descripcion","detailes...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
+    MyCourse(3, "Curso de Javascript developer", "Ejemplo de descripcion","details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
+    MyCourse(4, "Curso de Android Developer", "Ejemplo de descripcion larga", "details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now())
 )
 
 
 @Composable
-fun CareerScreen(navController: NavController) {
+fun RoadmapScreen(navController: NavController) {
     Scaffold(topBar = {
         TopAppBar {
             Icon(imageVector = Icons.Default.ArrowBack,
                 contentDescription = "Volver",
                 modifier = Modifier.clickable { navController.popBackStack() })
             Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "Career")
+            Text(text = "Roadmap")
         }
     }) {
 
@@ -57,7 +57,7 @@ fun CareerScreen(navController: NavController) {
 
 @Composable
 fun DetailsContent(title: String){
-    
+
     Column(Modifier.padding(start = 6.dp)) {
         Text(
             text = title,
@@ -71,32 +71,31 @@ fun DetailsContent(title: String){
                     " when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         )
     }
-    
+
 
 }
 
 @Composable
 fun BodyContent(navController: NavController){
-    MyRoadmaps(roadmaps = roadmaps, navController)
+    MyCourses(courses = courses, navController)
 }
 
 @Composable
-fun MyRoadmaps(roadmaps: List<MyRoadmap>, navController: NavController){
+fun MyCourses(courses: List<MyCourse>, navController: NavController){
     LazyColumn{
-        items(roadmaps) { roadmap -> Roadmap(roadmap = roadmap, navController)
+        items(courses) { course -> Course(course = course, navController)
         }
     }
 }
 
 @Composable
-fun Roadmap(roadmap: MyRoadmap, navController: NavController){
+fun Course(course: MyCourse, navController: NavController){
     var context = LocalContext.current
     Row(modifier = Modifier
         .padding(8.dp)
         .clickable {
-            //val toast = Toast.makeText(context, "Se hizo click", Toast.LENGTH_LONG)
-            //toast.show()
-            navController.navigate(route = AppScreens.RoadmapScreen.route)
+            val toast = Toast.makeText(context, "Se hizo click", Toast.LENGTH_LONG)
+            toast.show()
         }) {
 
         Image(
@@ -107,9 +106,9 @@ fun Roadmap(roadmap: MyRoadmap, navController: NavController){
         Column(modifier = Modifier
             .padding(start = 8.dp)
             .fillMaxWidth()) {
-            Text(text = roadmap.name, fontWeight = FontWeight.Bold)
+            Text(text = course.name, fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.height(16.dp))
-            Text(text = roadmap.description)
+            Text(text = course.description)
         }
     }
 
@@ -117,6 +116,6 @@ fun Roadmap(roadmap: MyRoadmap, navController: NavController){
 
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
-fun careerScreenPreview(){
-    CareerScreen(rememberNavController())
+fun roadmapScreenPreview(){
+    RoadmapScreen(rememberNavController())
 }

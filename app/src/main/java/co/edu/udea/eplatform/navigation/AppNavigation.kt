@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import co.edu.udea.eplatform.ui.screen.career.CareerScreen
 import co.edu.udea.eplatform.ui.screen.home.HomeScreen
+import co.edu.udea.eplatform.ui.screen.roadmap.RoadmapScreen
 
 @Composable
 fun AppNavigation() {
@@ -19,6 +20,9 @@ fun AppNavigation() {
         }
         composable(route = AppScreens.CareerScreen.route){
             CareerScreen(navController)
+        }
+        composable(route = AppScreens.RoadmapScreen.route){
+            RoadmapScreen(navController)
         }
     }
 }
