@@ -6,19 +6,19 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import co.edu.udea.eplatform.DataViewModel
 import co.edu.udea.eplatform.R
 import co.edu.udea.eplatform.model.MyCareer
 import co.edu.udea.eplatform.navigation.AppScreens
+import dagger.hilt.android.AndroidEntryPoint
 import java.time.LocalDate
 
 private val careers: List<MyCareer> = listOf(
@@ -28,9 +28,8 @@ private val careers: List<MyCareer> = listOf(
     MyCareer(4, "Contenido digital", "Ejemplo de descripcion larga", "/url.com", true, 23, LocalDate.now(), LocalDate.now())
 )
 
-
 @Composable
-fun HomeScreen(navController: NavController) {
+fun HomeScreen(navController: NavController, viewModel: DataViewModel = hiltViewModel()) {
     Scaffold(topBar = {
         TopAppBar {
             Text(text = "Home")
@@ -59,7 +58,7 @@ fun Career(career: MyCareer, navController: NavController){
     Row(modifier = Modifier
         .padding(8.dp)
         .clickable {
-            navController.navigate(route = AppScreens.CareerScreen.route + "/" + career.id )
+            navController.navigate(route = AppScreens.CareerScreen.route + "/" + career.id)
         }) {
 
        Image(
