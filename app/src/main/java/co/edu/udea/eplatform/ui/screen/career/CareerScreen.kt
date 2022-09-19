@@ -1,6 +1,5 @@
 package co.edu.udea.eplatform.ui.screen.career
 
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -27,14 +26,6 @@ import co.edu.udea.eplatform.R
 import co.edu.udea.eplatform.model.MyCareer
 import co.edu.udea.eplatform.model.MyRoadmap
 import co.edu.udea.eplatform.navigation.AppScreens
-import java.time.LocalDate
-
-private val roadmaps: List<MyRoadmap> = listOf(
-    MyRoadmap(1, "Ruta de .Net Core", "Ejemplo de descripcion","details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
-    MyRoadmap(2, "Ruta de Java Developer", "Ejemplo de descripcion","detailes...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
-    MyRoadmap(3, "Ruta de Javascript developer", "Ejemplo de descripcion","details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
-    MyRoadmap(4, "Ruta de Android Developer", "Ejemplo de descripcion larga", "details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now())
-)
 
 
 @Composable

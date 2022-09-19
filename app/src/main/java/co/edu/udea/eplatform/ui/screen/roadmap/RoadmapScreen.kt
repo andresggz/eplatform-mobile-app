@@ -1,6 +1,5 @@
 package co.edu.udea.eplatform.ui.screen.roadmap
 
-import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -12,6 +11,7 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -19,26 +19,23 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import co.edu.udea.eplatform.DataViewModel
 import co.edu.udea.eplatform.R
 import co.edu.udea.eplatform.model.MyCourse
-import java.time.LocalDate
-
-private val courses: List<MyCourse> = listOf(
-    MyCourse(1, "Curso de .Net Core", "Ejemplo de descripcion","details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
-    MyCourse(2, "Curso de Java Developer", "Ejemplo de descripcion","detailes...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
-    MyCourse(3, "Curso de Javascript developer", "Ejemplo de descripcion","details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now()),
-    MyCourse(4, "Curso de Android Developer", "Ejemplo de descripcion larga", "details...", "/url.com","/url.com", true, 23, LocalDate.now(), LocalDate.now())
-)
+import co.edu.udea.eplatform.model.MyRoadmap
 
 
 @Composable
-fun RoadmapScreen(navController: NavController) {
+fun RoadmapScreen(navController: NavController, viewModel: DataViewModel = hiltViewModel()) {
 
     val currentRoadmapId = navController.currentBackStackEntry?.arguments?.getString("roadmapId")
 
-    currentRoadmapId?.let { Log.i("RoadmapScreen current roadmap", it) }
+    currentRoadmapId?.let { viewModel.getRoadmapById(Integer.valueOf(it)) }
+
+    val roadmapState = viewModel.roadmap.collectAsState()
 
     Scaffold(topBar = {
         TopAppBar {
@@ -51,30 +48,28 @@ fun RoadmapScreen(navController: NavController) {
     }) {
 
         Column {
-            DetailsContent("Desarrollo e Ingeniería")
+            DetailsContent(roadmapState.value)
 
             Spacer(modifier = Modifier.height(10.dp))
 
-            BodyContent(navController)
+            BodyContent(navController, roadmapState.value.courses)
         }
 
     }
 }
 
 @Composable
-fun DetailsContent(title: String){
+fun DetailsContent(roadmap: MyRoadmap){
 
     Column(Modifier.padding(start = 6.dp)) {
         Text(
-            text = title,
+            text = roadmap.name,
             fontSize = 25.sp,
             fontWeight = FontWeight.ExtraBold
         )
 
         Text(
-            text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
-                    " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," +
-                    " when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            text = roadmap.description
         )
     }
 
@@ -82,7 +77,7 @@ fun DetailsContent(title: String){
 }
 
 @Composable
-fun BodyContent(navController: NavController){
+fun BodyContent(navController: NavController, courses: List<MyCourse>){
     MyCourses(courses = courses, navController)
 }
 

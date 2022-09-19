@@ -13,9 +13,6 @@ interface RestDataSource {
     @GET("careers/{id}")
     suspend fun getCareerById(@Path("id") id: Int): MyCareer
 
-    @GET("roadmaps")
-    suspend fun getRoadmapsByCareerId(): List<MyRoadmap>
-
-    @GET("roadmaps/id")
-    suspend fun getRoadmapById(): MyRoadmap
+    @GET("roadmaps/{id}")
+    suspend fun getRoadmapById(@Path("id") id: Int): MyRoadmap
 }

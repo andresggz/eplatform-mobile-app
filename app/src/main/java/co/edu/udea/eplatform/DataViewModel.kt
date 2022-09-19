@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.edu.udea.eplatform.model.MyCareer
+import co.edu.udea.eplatform.model.MyRoadmap
 import co.edu.udea.eplatform.repository.DataRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -22,6 +23,9 @@ class DataViewModel @Inject constructor(
     private val _career = MutableStateFlow(MyCareer())
     val career: StateFlow<MyCareer> = _career
 
+    private val _roadmap = MutableStateFlow(MyRoadmap())
+    val roadmap: StateFlow<MyRoadmap> = _roadmap
+
     fun getCareers() {
         viewModelScope.launch {
             val response = dataRepo.getCareers()
@@ -34,6 +38,14 @@ class DataViewModel @Inject constructor(
             val response = dataRepo.getCareerById(id);
             Log.d("DataViewModelCareer", response.name)
             _career.value = response
+        }
+    }
+
+    fun getRoadmapById(id: Int) {
+        viewModelScope.launch {
+            val response = dataRepo.getRoadmapById(id);
+            Log.d("DataViewModelRoadmap", response.name)
+            _roadmap.value = response
         }
     }
 
