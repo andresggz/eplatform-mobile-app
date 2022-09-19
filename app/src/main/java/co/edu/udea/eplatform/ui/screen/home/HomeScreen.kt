@@ -8,6 +8,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -18,18 +20,17 @@ import co.edu.udea.eplatform.DataViewModel
 import co.edu.udea.eplatform.R
 import co.edu.udea.eplatform.model.MyCareer
 import co.edu.udea.eplatform.navigation.AppScreens
-import dagger.hilt.android.AndroidEntryPoint
 import java.time.LocalDate
 
-private val careers: List<MyCareer> = listOf(
-    MyCareer(1, "Desarrollo e Ingeniería", "Ejemplo de descripcion", "/url.com", true, 23, LocalDate.now(), LocalDate.now()),
+private var careers: List<MyCareer> = listOf(
+    MyCareer(1, "Desarrollo e Ingeniería!", "Ejemplo de descripcion", "/url.com", true, 23, LocalDate.now(), LocalDate.now()),
     MyCareer(2, "Diseño UI/UX", "Ejemplo de descripcion", "/url.com", true, 23, LocalDate.now(), LocalDate.now()),
     MyCareer(3, "Marketing", "Ejemplo de descripcion", "/url.com", true, 23, LocalDate.now(), LocalDate.now()),
     MyCareer(4, "Contenido digital", "Ejemplo de descripcion larga", "/url.com", true, 23, LocalDate.now(), LocalDate.now())
 )
 
 @Composable
-fun HomeScreen(navController: NavController, viewModel: DataViewModel = hiltViewModel()) {
+fun HomeScreen(navController: NavController) {
     Scaffold(topBar = {
         TopAppBar {
             Text(text = "Home")
@@ -45,9 +46,11 @@ fun BodyContent(navController: NavController){
 }
 
 @Composable
-fun MyCareers(careers: List<MyCareer>, navController: NavController){
+fun MyCareers(careers: List<MyCareer>, navController: NavController, viewModel: DataViewModel = hiltViewModel()){
+    viewModel.getCareers()
+    val state by viewModel.careers.collectAsState()
     LazyColumn{
-        items(careers) { career -> Career(career = career, navController)
+        items(state) { career -> Career(career = career, navController)
         }
     }
 }

@@ -7,6 +7,8 @@ import javax.inject.Inject
 interface DataRepository {
 
     suspend fun getCareers(): List<MyCareer>
+
+    suspend fun getCareerById(id: Int): MyCareer
 }
 
 class DataRepositoryImpl @Inject constructor(
@@ -14,8 +16,11 @@ class DataRepositoryImpl @Inject constructor(
 ) : DataRepository {
 
     override suspend fun getCareers(): List<MyCareer> {
-        val careers = dataSource.getCareers()!!
-        return careers
+        return dataSource.getCareers()
+    }
+
+    override suspend fun getCareerById(id: Int): MyCareer {
+        return dataSource.getCareerById(id)
     }
 
 }

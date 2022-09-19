@@ -11,6 +11,7 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -18,9 +19,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import co.edu.udea.eplatform.DataViewModel
 import co.edu.udea.eplatform.R
+import co.edu.udea.eplatform.model.MyCareer
 import co.edu.udea.eplatform.model.MyRoadmap
 import co.edu.udea.eplatform.navigation.AppScreens
 import java.time.LocalDate
@@ -34,11 +38,13 @@ private val roadmaps: List<MyRoadmap> = listOf(
 
 
 @Composable
-fun CareerScreen(navController: NavController) {
+fun CareerScreen(navController: NavController, viewModel: DataViewModel = hiltViewModel()) {
 
     val currentCareerId = navController.currentBackStackEntry?.arguments?.getString("careerId")
 
-    currentCareerId?.let { Log.i("CareerScreen current career", it) }
+    currentCareerId?.let { viewModel.getCareerById(Integer.valueOf(it)) }
+
+    val careerState = viewModel.career.collectAsState()
 
     Scaffold(topBar = {
         TopAppBar {
@@ -51,30 +57,28 @@ fun CareerScreen(navController: NavController) {
     }) {
 
         Column {
-            DetailsContent("Desarrollo e Ingeniería")
+            DetailsContent(careerState.value)
 
             Spacer(modifier = Modifier.height(10.dp))
 
-            BodyContent(navController)
+            BodyContent(navController, careerState.value.roadmaps)
         }
 
     }
 }
 
 @Composable
-fun DetailsContent(title: String){
+fun DetailsContent(career: MyCareer){
     
     Column(Modifier.padding(start = 6.dp)) {
         Text(
-            text = title,
+            text = career.name,
             fontSize = 25.sp,
             fontWeight = FontWeight.ExtraBold
         )
 
         Text(
-            text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
-                    " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s," +
-                    " when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            text = career.description
         )
     }
     
@@ -82,7 +86,7 @@ fun DetailsContent(title: String){
 }
 
 @Composable
-fun BodyContent(navController: NavController){
+fun BodyContent(navController: NavController, roadmaps: List<MyRoadmap>){
     MyRoadmaps(roadmaps = roadmaps, navController)
 }
 
