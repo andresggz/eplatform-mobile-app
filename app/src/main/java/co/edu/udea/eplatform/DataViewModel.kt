@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.edu.udea.eplatform.model.MyCareer
+import co.edu.udea.eplatform.model.MyClass
 import co.edu.udea.eplatform.model.MyCourse
 import co.edu.udea.eplatform.model.MyRoadmap
 import co.edu.udea.eplatform.repository.DataRepository
@@ -29,6 +30,9 @@ class DataViewModel @Inject constructor(
 
     private val _course = MutableStateFlow(MyCourse())
     val course: StateFlow<MyCourse> = _course
+
+    private val _myClass = MutableStateFlow(MyClass())
+    val myClass: StateFlow<MyClass> = _myClass
 
 
     fun getCareers() {
@@ -59,6 +63,14 @@ class DataViewModel @Inject constructor(
             val response = dataRepo.getCourseById(id);
             Log.d("DataViewModelCourse", response.name)
             _course.value = response
+        }
+    }
+
+    fun getClassById(id: Int) {
+        viewModelScope.launch {
+            val response = dataRepo.getClassById(id);
+            Log.d("DataViewModelCourse", response.name)
+            _myClass.value = response
         }
     }
 

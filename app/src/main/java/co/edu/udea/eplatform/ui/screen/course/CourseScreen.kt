@@ -1,6 +1,5 @@
 package co.edu.udea.eplatform.ui.screen.course
 
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -28,6 +27,7 @@ import androidx.navigation.compose.rememberNavController
 import co.edu.udea.eplatform.DataViewModel
 import co.edu.udea.eplatform.model.MyClass
 import co.edu.udea.eplatform.model.MyCourse
+import co.edu.udea.eplatform.navigation.AppScreens
 
 
 @Composable
@@ -45,7 +45,7 @@ fun CourseScreen(navController: NavController, viewModel: DataViewModel = hiltVi
                 contentDescription = "Volver",
                 modifier = Modifier.clickable { navController.popBackStack() })
             Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "Roadmap")
+            Text(text = "Course")
         }
     }) {
 
@@ -101,8 +101,7 @@ fun MyClassC(myClass: MyClass, navController: NavController){
     Row(modifier = Modifier
         .padding(8.dp)
         .clickable {
-            val toast = Toast.makeText(context, "Se hizo click", Toast.LENGTH_LONG)
-            toast.show()
+            navController.navigate(route = AppScreens.ClassScreen.route + "/" + myClass.id)
         }) {
 
         Row(modifier = Modifier

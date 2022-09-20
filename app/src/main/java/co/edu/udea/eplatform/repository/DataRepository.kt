@@ -2,6 +2,7 @@ package co.edu.udea.eplatform.repository
 
 import co.edu.udea.eplatform.datasource.RestDataSource
 import co.edu.udea.eplatform.model.MyCareer
+import co.edu.udea.eplatform.model.MyClass
 import co.edu.udea.eplatform.model.MyCourse
 import co.edu.udea.eplatform.model.MyRoadmap
 import javax.inject.Inject
@@ -15,6 +16,8 @@ interface DataRepository {
     suspend fun getRoadmapById(id: Int): MyRoadmap
 
     suspend fun getCourseById(id: Int): MyCourse
+
+    suspend fun getClassById(id: Int): MyClass
 }
 
 class DataRepositoryImpl @Inject constructor(
@@ -35,6 +38,10 @@ class DataRepositoryImpl @Inject constructor(
 
     override suspend fun getCourseById(id: Int): MyCourse {
         return dataSource.getCourseById(id)
+    }
+
+    override suspend fun getClassById(id: Int): MyClass {
+        return dataSource.getClassById(id)
     }
 
 }

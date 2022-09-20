@@ -1,6 +1,7 @@
 package co.edu.udea.eplatform.datasource
 
 import co.edu.udea.eplatform.model.MyCareer
+import co.edu.udea.eplatform.model.MyClass
 import co.edu.udea.eplatform.model.MyCourse
 import co.edu.udea.eplatform.model.MyRoadmap
 import retrofit2.http.GET
@@ -19,4 +20,7 @@ interface RestDataSource {
 
     @GET("courses/{id}")
     suspend fun getCourseById(@Path("id") id: Int): MyCourse
+
+    @GET("classes/{id}")
+    suspend fun getClassById(@Path("id") id: Int): MyClass
 }
