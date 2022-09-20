@@ -44,9 +44,9 @@ fun BodyContent(navController: NavController){
 @Composable
 fun MyCareers(navController: NavController, viewModel: DataViewModel = hiltViewModel()){
     viewModel.getCareers()
-    val state by viewModel.careers.collectAsState()
+    val careersState by viewModel.careers.collectAsState()
     LazyColumn{
-        items(state) { career -> Career(career = career, navController)
+        items(careersState) { career -> Career(career = career, navController)
         }
     }
 }

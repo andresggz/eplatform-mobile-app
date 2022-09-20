@@ -1,6 +1,5 @@
 package co.edu.udea.eplatform.ui.screen.roadmap
 
-import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -26,6 +25,7 @@ import co.edu.udea.eplatform.DataViewModel
 import co.edu.udea.eplatform.R
 import co.edu.udea.eplatform.model.MyCourse
 import co.edu.udea.eplatform.model.MyRoadmap
+import co.edu.udea.eplatform.navigation.AppScreens
 
 
 @Composable
@@ -95,8 +95,7 @@ fun Course(course: MyCourse, navController: NavController){
     Row(modifier = Modifier
         .padding(8.dp)
         .clickable {
-            val toast = Toast.makeText(context, "Se hizo click", Toast.LENGTH_LONG)
-            toast.show()
+            navController.navigate(route = AppScreens.CourseScreen.route + "/" + course.id)
         }) {
 
         Image(

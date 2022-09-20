@@ -17,7 +17,7 @@ class DataSourceModule {
     @Singleton
     @Provides
     @Named("BaseUrl")
-    fun provideBaseUrl() = "https://07b1-181-128-36-250.ngrok.io/eplatform/"
+    fun provideBaseUrl() = "https://78fa-181-128-36-250.ngrok.io/eplatform/"
 
     @Singleton
     @Provides

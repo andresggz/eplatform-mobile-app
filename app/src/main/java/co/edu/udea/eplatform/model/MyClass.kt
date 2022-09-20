@@ -9,6 +9,7 @@ data class MyClass(
     val teacherName: String = "",
     val teacherPictureUrl: String = "",
     val videoUrl: String = "",
+    val duration: Int = 0,
     val createDate: LocalDate = LocalDate.now(),
     val updateDate: LocalDate = LocalDate.now()
 )

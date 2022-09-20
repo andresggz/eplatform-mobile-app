@@ -10,7 +10,7 @@ data class MyCourse(
     val iconId: String = "",
     val bannerId: String = "",
     val active: Boolean = false,
-    val totalCourses: Int = 0,
+    val totalClasses: Int = 0,
     val createDate: LocalDate = LocalDate.now(),
     val updateDate: LocalDate = LocalDate.now(),
     val classes: List<MyClass> = emptyList()

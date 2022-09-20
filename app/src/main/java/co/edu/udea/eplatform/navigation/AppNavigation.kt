@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import co.edu.udea.eplatform.ui.screen.career.CareerScreen
+import co.edu.udea.eplatform.ui.screen.course.CourseScreen
 import co.edu.udea.eplatform.ui.screen.home.HomeScreen
 import co.edu.udea.eplatform.ui.screen.roadmap.RoadmapScreen
 
@@ -23,6 +24,10 @@ fun AppNavigation() {
         }
         composable(route = AppScreens.RoadmapScreen.route + "/{roadmapId}"){
             RoadmapScreen(navController)
+        }
+
+        composable(route = AppScreens.CourseScreen.route + "/{courseId}"){
+            CourseScreen(navController)
         }
     }
 }
