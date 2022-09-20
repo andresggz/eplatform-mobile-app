@@ -9,16 +9,22 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import co.edu.udea.eplatform.DataViewModel
 import co.edu.udea.eplatform.model.MyClass
+import com.google.android.exoplayer2.ExoPlayer
+import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.ui.StyledPlayerView
 
 
 @Composable
@@ -57,14 +63,15 @@ fun DetailsContent(myClass: MyClass){
     Column(Modifier.padding(start = 6.dp)) {
 
         Text(
-            text = String.format("Aca va el video: %s", myClass.videoUrl)
-        )
-
-        Text(
             text = myClass.name,
             fontSize = 25.sp,
             fontWeight = FontWeight.ExtraBold
         )
+
+        if(!myClass.videoUrl.equals("")){
+            VideoView(videoUri = myClass.videoUrl)
+        }
+
 
         Text(
             text = myClass.description
@@ -84,6 +91,31 @@ fun DetailsContent(myClass: MyClass){
     }
 
 
+}
+
+@Composable
+fun VideoView(videoUri: String) {
+    val context = LocalContext.current
+
+    val exoPlayer = ExoPlayer.Builder(LocalContext.current)
+        .build()
+        .also { exoPlayer ->
+            val mediaItem = MediaItem.Builder()
+                .setUri(videoUri)
+                .build()
+            exoPlayer.setMediaItem(mediaItem)
+            exoPlayer.prepare()
+        }
+
+    DisposableEffect(
+        AndroidView(factory = {
+            StyledPlayerView(context).apply {
+                player = exoPlayer
+            }
+        })
+    ) {
+        onDispose { exoPlayer.release() }
+    }
 }
 
 @Composable
