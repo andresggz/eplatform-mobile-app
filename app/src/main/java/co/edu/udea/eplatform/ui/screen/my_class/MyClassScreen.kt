@@ -1,5 +1,6 @@
 package co.edu.udea.eplatform.ui.screen.my_class
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
@@ -22,6 +23,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import co.edu.udea.eplatform.DataViewModel
 import co.edu.udea.eplatform.model.MyClass
+import coil.compose.rememberAsyncImagePainter
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.ui.StyledPlayerView
@@ -56,8 +58,7 @@ fun MyClassScreen(navController: NavController, viewModel: DataViewModel = hiltV
 }
 
 @Composable
-fun DetailsContent(myClass: MyClass){
-
+fun DetailsContent(myClass: MyClass) {
 
 
     Column(Modifier.padding(start = 6.dp)) {
@@ -68,7 +69,7 @@ fun DetailsContent(myClass: MyClass){
             fontWeight = FontWeight.ExtraBold
         )
 
-        if(!myClass.videoUrl.equals("")){
+        if (!myClass.videoUrl.equals("")) {
             VideoView(videoUri = myClass.videoUrl)
         }
 
@@ -81,8 +82,10 @@ fun DetailsContent(myClass: MyClass){
             text = String.format("Duración: %s", myClass.duration)
         )
 
-        Text(
-            text = String.format("Profesor foto: %s", myClass.teacherPictureUrl)
+        Image(
+            painter = rememberAsyncImagePainter(myClass.teacherPictureUrl),
+            null,
+            modifier = Modifier.size(50.dp)
         )
 
         Text(
@@ -120,6 +123,16 @@ fun VideoView(videoUri: String) {
 
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
-fun classScreenPreview(){
-    DetailsContent(MyClass(1, "1. Instalando Git", "En esta clase..", "Marcos P.", "url...", "youtbe.com", 3))
+fun classScreenPreview() {
+    DetailsContent(
+        MyClass(
+            1,
+            "1. Instalando Git",
+            "En esta clase..",
+            "Marcos P.",
+            "url...",
+            "youtbe.com",
+            3
+        )
+    )
 }

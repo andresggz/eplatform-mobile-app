@@ -61,7 +61,7 @@ fun CourseScreen(navController: NavController, viewModel: DataViewModel = hiltVi
 }
 
 @Composable
-fun DetailsContent(course: MyCourse){
+fun DetailsContent(course: MyCourse) {
 
     Column(Modifier.padding(start = 6.dp)) {
         Text(
@@ -83,20 +83,21 @@ fun DetailsContent(course: MyCourse){
 }
 
 @Composable
-fun BodyContent(navController: NavController, classes: List<MyClass>){
+fun BodyContent(navController: NavController, classes: List<MyClass>) {
     MyClassC(classes = classes, navController)
 }
 
 @Composable
-fun MyClassC(classes: List<MyClass>, navController: NavController){
-    LazyColumn{
-        items(classes) { myClass -> MyClassC(myClass = myClass, navController)
+fun MyClassC(classes: List<MyClass>, navController: NavController) {
+    LazyColumn {
+        items(classes) { myClass ->
+            MyClassC(myClass = myClass, navController)
         }
     }
 }
 
 @Composable
-fun MyClassC(myClass: MyClass, navController: NavController){
+fun MyClassC(myClass: MyClass, navController: NavController) {
     var context = LocalContext.current
     Row(modifier = Modifier
         .padding(8.dp)
@@ -104,9 +105,12 @@ fun MyClassC(myClass: MyClass, navController: NavController){
             navController.navigate(route = AppScreens.ClassScreen.route + "/" + myClass.id)
         }) {
 
-        Row(modifier = Modifier
-            .padding(start = 8.dp)
-            .fillMaxWidth().background(Color.LightGray)) {
+        Row(
+            modifier = Modifier
+                .padding(start = 8.dp)
+                .fillMaxWidth()
+                .background(Color.LightGray)
+        ) {
             Icon(Icons.Default.PlayArrow, null)
             Text(text = myClass.name, fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.width(16.dp))
@@ -122,6 +126,16 @@ fun MyClassC(myClass: MyClass, navController: NavController){
 
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
-fun courseScreenPreview(){
-    MyClassC(MyClass(1, "1. Instalando Git", "En esta clase..", "Marcos P.", "url...", "youtbe.com", 3), rememberNavController())
+fun courseScreenPreview() {
+    MyClassC(
+        MyClass(
+            1,
+            "1. Instalando Git",
+            "En esta clase..",
+            "Marcos P.",
+            "url...",
+            "youtbe.com",
+            3
+        ), rememberNavController()
+    )
 }

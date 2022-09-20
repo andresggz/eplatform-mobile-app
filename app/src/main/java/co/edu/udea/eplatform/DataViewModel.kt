@@ -17,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class DataViewModel @Inject constructor(
     private val dataRepo: DataRepository
-): ViewModel() {
+) : ViewModel() {
 
     private val _careers = MutableStateFlow(emptyList<MyCareer>())
     val careers: StateFlow<List<MyCareer>> = _careers

@@ -16,22 +16,22 @@ fun AppNavigation() {
     NavHost(
         navController = navController,
         startDestination = AppScreens.HomeScreen.route
-    ){
-        composable(route = AppScreens.HomeScreen.route){
+    ) {
+        composable(route = AppScreens.HomeScreen.route) {
             HomeScreen(navController)
         }
-        composable(route = AppScreens.CareerScreen.route + "/{careerId}"){
+        composable(route = AppScreens.CareerScreen.route + "/{careerId}") {
             CareerScreen(navController)
         }
-        composable(route = AppScreens.RoadmapScreen.route + "/{roadmapId}"){
+        composable(route = AppScreens.RoadmapScreen.route + "/{roadmapId}") {
             RoadmapScreen(navController)
         }
 
-        composable(route = AppScreens.CourseScreen.route + "/{courseId}"){
+        composable(route = AppScreens.CourseScreen.route + "/{courseId}") {
             CourseScreen(navController)
         }
 
-        composable(route = AppScreens.ClassScreen.route + "/{classId}"){
+        composable(route = AppScreens.ClassScreen.route + "/{classId}") {
             MyClassScreen(navController)
         }
     }
