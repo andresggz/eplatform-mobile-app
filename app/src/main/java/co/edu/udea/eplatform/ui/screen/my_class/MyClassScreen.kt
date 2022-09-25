@@ -44,7 +44,7 @@ fun MyClassScreen(navController: NavController, viewModel: DataViewModel = hiltV
                 contentDescription = "Volver",
                 modifier = Modifier.clickable { navController.popBackStack() })
             Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "Class")
+            Text(text = "Clase")
         }
     }) {
 

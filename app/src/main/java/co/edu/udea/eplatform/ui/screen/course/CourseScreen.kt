@@ -45,7 +45,7 @@ fun CourseScreen(navController: NavController, viewModel: DataViewModel = hiltVi
                 contentDescription = "Volver",
                 modifier = Modifier.clickable { navController.popBackStack() })
             Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "Course")
+            Text(text = "Curso")
         }
     }) {
 

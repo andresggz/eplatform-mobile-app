@@ -44,7 +44,7 @@ fun RoadmapScreen(navController: NavController, viewModel: DataViewModel = hiltV
                 contentDescription = "Volver",
                 modifier = Modifier.clickable { navController.popBackStack() })
             Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "Roadmap")
+            Text(text = "Ruta de aprendizaje")
         }
     }) {
 

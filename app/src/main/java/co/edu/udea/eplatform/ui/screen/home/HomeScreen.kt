@@ -12,8 +12,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.Paragraph
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import co.edu.udea.eplatform.DataViewModel
@@ -26,11 +31,36 @@ import coil.compose.rememberAsyncImagePainter
 fun HomeScreen(navController: NavController) {
     Scaffold(topBar = {
         TopAppBar {
-            Text(text = "Home")
+            Text(text = "Inicio")
         }
     }) {
-        BodyContent(navController)
+
+        Column() {
+            Welcome()
+
+            BodyContent(navController)
+        }
     }
+}
+
+@Composable
+fun Welcome(){
+
+    Column() {
+        Text(text = """
+        Tú decides a dónde quieres llegar
+    """.trimIndent(), Modifier.padding(5.dp, 5.dp, 5.dp, 5.dp),
+            fontSize = 25.sp,
+            fontWeight = FontWeight.ExtraBold)
+
+        Text(text = """
+        Especialízate en las áreas con mayor demanda laboral y aprende lo que necesitas para desarrollar tu perfil profesional
+    """.trimIndent(), Modifier.padding(20.dp, 5.dp, 5.dp, 20.dp))
+    }
+
+
+
+
 }
 
 @Composable
@@ -75,4 +105,10 @@ fun Career(career: MyCareer, navController: NavController) {
         }
     }
 
+}
+
+@Composable
+@Preview(showBackground = true, showSystemUi = true)
+fun pre(){
+    Welcome()
 }
