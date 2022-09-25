@@ -31,7 +31,7 @@ import coil.compose.rememberAsyncImagePainter
 fun HomeScreen(navController: NavController) {
     Scaffold(topBar = {
         TopAppBar {
-            Text(text = "Inicio")
+            Text(text = "Inicio", Modifier.padding(start = 2.dp))
         }
     }) {
 
@@ -128,12 +128,11 @@ fun Career(career: MyCareer, navController: NavController) {
 fun Article(article: MyArticle, navController: NavController) {
     var context = LocalContext.current
 
-
     Text(text = article.name, modifier = Modifier
         .widthIn(0.dp, 135.dp)
         .padding(start = 5.dp, end = 5.dp)
         .clickable {
-            navController.navigate(route = AppScreens.CareerScreen.route + "/" + article.id)
+            navController.navigate(route = AppScreens.ArticleScreen.route + "/" + article.id)
         }, maxLines = 5, fontWeight = FontWeight.Bold)
 
 }

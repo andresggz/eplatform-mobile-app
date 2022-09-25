@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import co.edu.udea.eplatform.ui.screen.article.ArticleScreen
 import co.edu.udea.eplatform.ui.screen.career.CareerScreen
 import co.edu.udea.eplatform.ui.screen.course.CourseScreen
 import co.edu.udea.eplatform.ui.screen.home.HomeScreen
@@ -34,5 +35,10 @@ fun AppNavigation() {
         composable(route = AppScreens.ClassScreen.route + "/{classId}") {
             MyClassScreen(navController)
         }
+
+        composable(route = AppScreens.ArticleScreen.route + "/{articleId}") {
+            ArticleScreen(navController)
+        }
+
     }
 }

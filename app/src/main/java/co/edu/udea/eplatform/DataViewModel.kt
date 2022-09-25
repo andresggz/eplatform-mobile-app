@@ -1,6 +1,5 @@
 package co.edu.udea.eplatform
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.edu.udea.eplatform.model.*
@@ -55,7 +54,6 @@ class DataViewModel @Inject constructor(
     fun getCareerById(id: Int) {
         viewModelScope.launch {
             val response = dataRepo.getCareerById(id);
-            Log.d("DataViewModelCareer", response.name)
             _career.value = response
         }
     }
@@ -63,7 +61,6 @@ class DataViewModel @Inject constructor(
     fun getArticleById(id: Int) {
         viewModelScope.launch {
             val response = dataRepo.getArticleById(id);
-            Log.d("DataViewModelArticle", response.name)
             _article.value = response
         }
     }
@@ -71,7 +68,6 @@ class DataViewModel @Inject constructor(
     fun getRoadmapById(id: Int) {
         viewModelScope.launch {
             val response = dataRepo.getRoadmapById(id);
-            Log.d("DataViewModelRoadmap", response.name)
             _roadmap.value = response
         }
     }
@@ -79,7 +75,6 @@ class DataViewModel @Inject constructor(
     fun getCourseById(id: Int) {
         viewModelScope.launch {
             val response = dataRepo.getCourseById(id);
-            Log.d("DataViewModelCourse", response.name)
             _course.value = response
         }
     }
@@ -87,7 +82,6 @@ class DataViewModel @Inject constructor(
     fun getClassById(id: Int) {
         viewModelScope.launch {
             val response = dataRepo.getClassById(id);
-            Log.d("DataViewModelCourse", response.name)
             _myClass.value = response
         }
     }
