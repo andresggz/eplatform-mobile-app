@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -12,9 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.Paragraph
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -22,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import co.edu.udea.eplatform.DataViewModel
+import co.edu.udea.eplatform.model.MyArticle
 import co.edu.udea.eplatform.model.MyCareer
 import co.edu.udea.eplatform.navigation.AppScreens
 import coil.compose.rememberAsyncImagePainter
@@ -35,10 +35,16 @@ fun HomeScreen(navController: NavController) {
         }
     }) {
 
-        Column() {
+        Column {
             Welcome()
 
+            MyArticles(navController)
+
+            Spacer(modifier = Modifier.height(16.dp))
+
             BodyContent(navController)
+
+
         }
     }
 }
@@ -50,7 +56,7 @@ fun Welcome(){
         Text(text = """
         Tú decides a dónde quieres llegar
     """.trimIndent(), Modifier.padding(5.dp, 5.dp, 5.dp, 5.dp),
-            fontSize = 25.sp,
+            fontSize = 40.sp,
             fontWeight = FontWeight.ExtraBold)
 
         Text(text = """
@@ -65,6 +71,15 @@ fun Welcome(){
 
 @Composable
 fun BodyContent(navController: NavController) {
+
+    Column() {
+        Text(text = """
+        Explora ahora mismo todas las carreras disponibles!
+    """.trimIndent(), Modifier.padding(5.dp, 5.dp, 5.dp, 5.dp),
+            fontSize = 25.sp,
+            fontWeight = FontWeight.ExtraBold)
+    }
+
     MyCareers(navController)
 }
 
@@ -107,8 +122,43 @@ fun Career(career: MyCareer, navController: NavController) {
 
 }
 
+
+
+@Composable
+fun Article(article: MyArticle, navController: NavController) {
+    var context = LocalContext.current
+
+
+    Text(text = article.name, modifier = Modifier
+        .widthIn(0.dp, 135.dp)
+        .padding(start = 5.dp, end = 5.dp)
+        .clickable {
+            navController.navigate(route = AppScreens.CareerScreen.route + "/" + article.id)
+        }, maxLines = 5, fontWeight = FontWeight.Bold)
+
+}
+
+@Composable
+fun MyArticles(navController: NavController, viewModel: DataViewModel = hiltViewModel()) {
+
+    Column() {
+        Text(text = """
+        Últimos artículos
+    """.trimIndent(), Modifier.padding(5.dp, 5.dp, 5.dp, 5.dp),
+            fontSize = 25.sp,
+            fontWeight = FontWeight.ExtraBold)
+    }
+
+    viewModel.getArticles()
+    val articlesState by viewModel.articles.collectAsState()
+    LazyRow(Modifier.padding(start = 10.dp)) {
+        items(articlesState) { article ->
+            Article(article = article, navController)
+        }
+    }
+}
+
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
 fun pre(){
-    Welcome()
 }

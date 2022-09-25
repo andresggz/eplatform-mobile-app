@@ -1,17 +1,18 @@
 package co.edu.udea.eplatform.repository
 
 import co.edu.udea.eplatform.datasource.RestDataSource
-import co.edu.udea.eplatform.model.MyCareer
-import co.edu.udea.eplatform.model.MyClass
-import co.edu.udea.eplatform.model.MyCourse
-import co.edu.udea.eplatform.model.MyRoadmap
+import co.edu.udea.eplatform.model.*
 import javax.inject.Inject
 
 interface DataRepository {
 
     suspend fun getCareers(): List<MyCareer>
 
+    suspend fun getArticles(): List<MyArticle>
+
     suspend fun getCareerById(id: Int): MyCareer
+
+    suspend fun getArticleById(id: Int): MyArticle
 
     suspend fun getRoadmapById(id: Int): MyRoadmap
 
@@ -28,8 +29,16 @@ class DataRepositoryImpl @Inject constructor(
         return dataSource.getCareers()
     }
 
+    override suspend fun getArticles(): List<MyArticle> {
+        return dataSource.getArticles()
+    }
+
     override suspend fun getCareerById(id: Int): MyCareer {
         return dataSource.getCareerById(id)
+    }
+
+    override suspend fun getArticleById(id: Int): MyArticle {
+        return dataSource.getArticleById(id)
     }
 
     override suspend fun getRoadmapById(id: Int): MyRoadmap {
