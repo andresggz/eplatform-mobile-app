@@ -74,23 +74,35 @@ fun DetailsContent(myClass: MyClass) {
         }
 
 
-        Text(
-            text = myClass.description
-        )
+        Spacer(modifier = Modifier.height(16.dp))
 
-        Text(
-            text = String.format("Duración: %s", myClass.duration)
-        )
 
-        Image(
-            painter = rememberAsyncImagePainter(myClass.teacherPictureUrl),
-            null,
-            modifier = Modifier.size(50.dp)
-        )
+            Text(
+                text = myClass.description
+            )
 
-        Text(
-            text = String.format("Profesor: %s", myClass.teacherName)
-        )
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(
+                text = String.format("Duración: %s min", myClass.duration)
+            )
+
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Row() {
+            Image(
+                painter = rememberAsyncImagePainter(myClass.teacherPictureUrl),
+                null,
+                modifier = Modifier.size(50.dp)
+            )
+
+            Spacer(modifier = Modifier.width(16.dp))
+
+            Text(
+                text = myClass.teacherName
+            )
+        }
     }
 
 
