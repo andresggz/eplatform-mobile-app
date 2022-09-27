@@ -1,0 +1,1142 @@
+{
+  "uuid": "2bfc55b3-10f8-4959-8d90-761d0aba7b7d",
+  "lastMigration": 22,
+  "name": "Eplatform",
+  "endpointPrefix": "eplatform",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "ec8ed967-1f00-403b-9772-0d307f8a6fd7",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "articles",
+      "responses": [
+        {
+          "uuid": "5dd3da3b-eece-4a48-b5dc-ecc73d614d68",
+          "body": "[{\n  \"id\": 1,\n  \"name\": \"Diseño de APIs siguiendo las mejores prácticas\",\n  \"content\": \"Carrera para que aprendas Desarrollo e Ingeniería\"\n},{\n  \"id\": 2,\n  \"name\": \"Aprende a realizar test en Java con Mockito\",\n  \"content\": \"Aquí aprenderas Diseño UI/UX\"\n},{\n  \"id\": 3,\n  \"name\": \"Qué es Clean Architecture, Hexagonal Architecture?\",\n  \"content\": \"Hora de aprender Marketing!\"\n},{\n  \"id\": 4,\n  \"name\": \"CQS y CQRS, qué son y en que se diferencian?\",\n  \"content\": \"Hora de aprender Contenido digital!!\"\n}]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "38db8b8c-8fa2-4c9c-9cb2-6eb0f335807d",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "articles/1",
+      "responses": [
+        {
+          "uuid": "1bd3dc2e-4f4a-4041-8b9c-1abe05d8bf66",
+          "body": "{\n  \"id\": 1,\n  \"name\": \"Diseño de APIs siguiendo las mejores prácticas\",\n  \"content\": \"Según pasa el tiempo y vas haciendo servicios que tienen que escalarse e integrarse con otros servicios, te vas dando cuenta de lo necesario que es un buen diseño o por lo menos de un diseño mínimamente bien pensando y ejecutado que cumpla una serie de requisitos mínimos. Ésta es la idea que pretendo transmitiros, pero antes os ubico un poco. En la entrada de Linkero – Creación de APIs RESTful en Python os presenté el framework Linkero que permitía montar APIs RESTful, y se presentaba junto con un ejemplo a forma de iniciación en las mismas.  En este entrada voy presentar una serie de recomendaciones, que pueden considerarse buenas prácticas, y que debéis tener en cuenta para asegurar un buen diseño de vuestras APIs RESTful.El concepto subyacente de una API RESTful es la de dividir la estructura de la API en recursos lógicos, montados sobre una URL, que nos permitan acceder a información o datos concretos usando métodos HTTP como POST, GET, PUT y DELETE para operar con los recursos. Estos métodos son equiparables a las operaciones CRUD (Create, Read, Update, Delete) de las bases de datos. Aclarado esto, empecemos con las recomendaciones.\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "c23eca3a-2937-4299-aa43-9f8ef3e893aa",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "articles/2",
+      "responses": [
+        {
+          "uuid": "fcfed829-b4a4-4f01-8abe-b5f257418ed1",
+          "body": "{\n  \"id\": 1,\n  \"name\": \"Aprende a realizar test en Java con Mockito\",\n  \"content\": \"Las pruebas unitarias son sumamente importantes en el desarrollo de software. Pero muchos desarrolladores, a pesar saber su importancia, no las codifican en sus proyectos. Las Pruebas unitarias con JUnit y Mockito te facilitarán la tarea de la automatización de tus pruebas, conocer estas herramientas no solo aumentara tus skills y valor en el mercado, además te ahorrara mucho tiempo a largo plazo y aumentaras la calidad de tu trabajo. En el siguiente ejemplo aprenderás su uso básico en 15 minutos. JUnit: Nos permite evaluar el resultado de la ejecución de un método. Es decir, nos permite comparar el resultado esperado, con el que realmente estamos obteniendo después de ejecutar el método. Mockito: Nos ayuda a simular la respuesta de otro método necesario para ejecutar el método que necesitamos probar. Esto nos permite centrarnos únicamente en el método que deseamos probar.Para mostrar el uso correcto de las pruebas unitarias. Vamos a crear un ejemplo en el dependiendo del tipo de cambio, transforme un tipo de divisa a su equivalente en dólares.\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "aecaaf3a-2e83-440c-9c58-0eacb84f7e20",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "articles/3",
+      "responses": [
+        {
+          "uuid": "b2a6dfa7-46a2-466b-9018-ec9d918e3638",
+          "body": "{\n  \"id\": 1,\n  \"name\": \"Qué es Clean Architecture, Hexagonal Architecture?\",\n  \"content\": \"Cualquier persona que haya trabajado como desarrollador durante, al menos, unos meses probablemente se ha enfrentado a situaciones en las que la aplicación en la que estaba trabajando, que al principio era amigable y estructurada, ha crecido tanto y tan rápido que contiene clases de más de 800 líneas de código.En ellas se pueden encontrar elementos duplicados, métodos que realizan quince acciones diferentes y poco a poco van surgiendo dificultades para encontrar dónde se realizan determinadas acciones o incluso para realizar tareas que deberían ser triviales como crear test unitarios.Plantear una nueva funcionalidad o una ampliación de las ya existentes empieza a ser inviable sin la perspectiva de invertir tiempo en refactorizar, y es en este momento en el cual empiezan a surgir incógnitas como: ¿qué ha pasado con mi proyecto?, ¿cómo hemos podido llegar a esta situación?\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "91cf0663-10ab-44a3-8fe7-e87b3e3f47f3",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "articles/4",
+      "responses": [
+        {
+          "uuid": "e5be82e3-7aee-46a1-828d-5aaf066a50c6",
+          "body": "{\n  \"id\": 1,\n  \"name\": \"CQS y CQRS, qué son y en que se diferencian?\",\n  \"content\": \"CQRS es un patrón de diseño de software que nos muestra cómo separar la lógica de nuestras aplicaciones para separar las lecturas de las escrituras.El patrón CQRS es un patrón que no habíamos visto antes de la llegada de los microservicios ya que lo más normal era tener un monolito que lo hacía todo, incluido el conectarse a una única base de datos, pero en el mundo actual, las arquitecturas distribuidas estan empezando a coger popularidad. El uso del patrón CQRS nos trae muchas ventajas pero nos podemos centrar principalmente en la escalabilidad de forma independiente.Si lo pensamos fríamente, cuando consultamos páginas webs, estamos entrando y saliendo de productos constantemente, te metes en una tienda y miras 45 productos de ahí descartas la mitad y vuelves a mirarlos todos para seguir con tu investigación.\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "33fd381e-b5ba-417e-8efc-b4a4890e3bb0",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "careers",
+      "responses": [
+        {
+          "uuid": "0a97bf29-02fe-41a0-90b2-2e25f6a5d4d0",
+          "body": "[{\n  \"id\": 1,\n  \"name\": \"Desarrollo e Ingeniería\",\n  \"description\": \"¡Aprende Frontend, Backend y Full Stack Development, los roles más populares y demandados en la industria de tecnología!\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=1200,quality=50,format=auto/media/learningpath/emblems/923ac4f3-e51b-43c4-a928-cb5c3f28115e.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 2,\n  \"name\": \"Diseño UI/UX\",\n  \"description\": \"Domina las técnicas y herramientas de las diferentes áreas del diseño, desde el gráfico hasta el diseño para Web.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=256,quality=75,format=auto/media/learningpath/badges/c4e26106-137d-41e8-a090-d7f35bac67a5.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 3,\n  \"name\": \"Marketing\",\n  \"description\": \"Conoce y aprende estrategias, herramientas y proyectos para que posiciones productos, servicios e incluso tu marca personal.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=256,quality=75,format=auto/media/learningpath/badges/3aafbff4-1320-4407-a6d1-435916bdd01f.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 4,\n  \"name\": \"Contenido digital\",\n  \"description\": \"Aprende a crear contenido audiovisual de alto impacto que conecte con tu audiencia y cumpla con tus objetivos.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=256,quality=75,format=auto/media/learningpath/badges/8338e0bf-54dd-4c52-811b-4102cd7c7102.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null\n}]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "c135b8f7-4e38-4a97-bd26-d41dafd7dba4",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "careers/1",
+      "responses": [
+        {
+          "uuid": "311641dd-3ea7-479b-8c29-4b0753a8cc0d",
+          "body": "{\n  \"id\": 1,\n  \"name\": \"Desarrollo e Ingeniería!\",\n  \"description\": \"El desarrollo web son todas las tecnologías y herramientas para construir páginas, aplicaciones y servicios de internet. El frontend es la parte visual y que interactúa con usuarios. El backend es la parte oculta donde se almacena y procesa la información de forma segura. Y Full Stack comúnmente significa especializarte a profundidad tanto en frontend como en backend.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=1200,quality=50,format=auto/media/learningpath/emblems/923ac4f3-e51b-43c4-a928-cb5c3f28115e.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"roadmaps\": [\n    {\n  \"id\": 1,\n  \"name\": \"Backend, Arquitectura y Bases de Datos\",\n  \"description\": \"Especialízate en sistemas de backend, bases de datos y arquitecturas de servidores para crear aplicaciones web profesionales y altamente escalables.\",\n  \"detail\": \"El desarrollo backend se encarga de procesar, almacenar y proteger la información de un sitio web. Esta es la capa que suele manejar la lógica de negocio, seguridad y control del servidor donde viven nuestras aplicaciones.La mayoría de lenguajes de programación nos permiten desarrollar en el backend. Todos siguen casi las mismas reglas, convenciones o protocolos web para comunicarse con el frontend, la base de datos e incluso otros servicios de backend.\",\n  \"iconId\": \"https://static.platzi.com/media/learningpath/badges/9506da80-e4d3-4c93-89a7-a09450ee98c6.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n},{\n  \"id\": 3,\n  \"name\": \"Fundamentos de Programación y Desarrollo Web\",\n  \"description\": \"Descubrirás el panorama general de herramientas, roles y empleos que puedes conseguir como web developer.\",\n  \"detail\": \"La tecnología es ciencia aplicada a las necesidades humanas. Darle un uso práctico a la ciencia es lo que llamamos ingeniería. Y hoy en día medimos esa practicidad con modelos de negocio escalables. La ciencia no se convierte en tecnología sin un sistema de distribución de alto impacto (es decir, un negocio).Es cierto que la tecnología arruina empleos y negocios. Pero a cambio genera oportunidades en industrias y estilos de vida completamente nuevos.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=1200,quality=50,format=auto/media/learningpath/emblems/923ac4f3-e51b-43c4-a928-cb5c3f28115e.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n},{\n  \"id\": 2,\n  \"name\": \"QA y Automatización de Pruebas\",\n  \"description\": \"Desarrolla tests para asegurar la calidad de tu software. Domina la automatización de pruebas con herramientas como Cypress y Puppeteer.\",\n  \"detail\": \"Las pruebas de software son diversas estrategias y metodologías para reducir al máximo los errores que nuestros usuarios puedan encontrar en el producto que desarrollamos. Implementando varios de los tipos de pruebas de software podemos resolver errores antes de que afecten en la experiencia de los usuarios. También protegen el tiempo y presupuesto de nuestro equipo.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/badge-fundamentos-nodejs-8fd9c0f4-562a-48e9-a85a-3a7db0fa384b.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n}\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "5563fc8f-d0ab-4c47-aa05-742916cac8ba",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "careers/2",
+      "responses": [
+        {
+          "uuid": "42fb8d37-9586-436e-b66d-5569a24783f9",
+          "body": "{\n  \"id\": 2,\n  \"name\": \"Diseño UI/UX\",\n  \"description\": \"Desata tu creatividad y encuentra el trabajo de tus sueños. Estudiar diseño, a diferencia de otras profesiones, es una gran oportunidad para entrar en cualquier industria y además permite incrementar la creatividad e incluso trabajar de forma freelance. El diseño es la búsqueda de una solución, a través de un proceso de configuración mental en cualquier campo desde la ingeniería hasta el marketing. Es una disciplina que requiere grandes dosis de creatividad, pero también de disciplina y constancia.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=1200,quality=50,format=auto/media/learningpath/emblems/923ac4f3-e51b-43c4-a928-cb5c3f28115e.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"roadmaps\": [\n    {\n  \"id\": 1,\n  \"name\": \"Graphic Designer\",\n  \"description\": \"Domina las herramientas y habilidades para triunfar como diseñador gráfico. Comunica visualmente a través de diseños publicitarios, ilustraciones y branding.\",\n  \"detail\": \"El objetivo principal de trabajar en diseño gráfico es crear soluciones visuales a un problema específico. Entre las funciones que te permitirán hacerlo se encuentran\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/badges-tipografia-2f8624de-1f28-4647-8879-c661a63b2d02.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n},{\n  \"id\": 1,\n  \"name\": \"Branding Designer\",\n  \"description\": \"¿Quieres desplegar estrategias de marca como la de Apple o Coca-Cola? Especialízate en diseño de identidad de marca.\",\n  \"detail\": \"El diseño es cada día más un factor clave y estratégico en las empresas. En un mundo saturado de compentencia, la identidad de la empresa es un factor diferencial para el éxito o el fracaso e las mismas. El Branding Designer es la persona encargada de desplegar esta estrategia. Algunas de sus actividades diarias son\",\n  \"iconId\": \"https://static.platzi.com/media/learningpath/badges/45b2f6c3-de66-4e3b-adcc-dc3f36292871.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n}\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "673e1bf2-feaf-4999-a88c-85a8f0f007df",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "careers/3",
+      "responses": [
+        {
+          "uuid": "de62e3b9-3c1a-469d-ae03-feb9991b2a1d",
+          "body": "{\n  \"id\": 3,\n  \"name\": \"Marketing\",\n  \"description\": \"Toda empresa necesita del marketing para posicionar sus productos en el mercado, comprender las necesidades de los usuarios y crecer. Encuentra las múltiples posibilidades, canales y nichos de la industria para que trabajes en Startups, agencias o por tu propia cuenta. Incluso, crea tu agencia o trabaja en consultoría en una de las áreas con mayor salida laboral.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=1200,quality=50,format=auto/media/learningpath/emblems/923ac4f3-e51b-43c4-a928-cb5c3f28115e.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"roadmaps\": [\n    {\n  \"id\": 1,\n  \"name\": \"Community Manager y Redes Sociales\",\n  \"description\": \"Gestiona redes sociales con estrategias y herramientas óptimas para la creación de contenidos y administración de comunidades.\",\n  \"detail\": \"El perfil de Community Manager se ha convertido en uno de los más importantes en el ámbito digital. Con el crecimiento del e-commerce y las relaciones con los clientes a través de redes sociales es de vital importancia contar con profesionales que manejen la planeación y ejecución de tareas que hacen a una empresa tener presencia online.\",\n  \"iconId\": \"https://static.platzi.com/media/learningpath/badges/867a6ef3-f280-40cc-8c7e-34cbf9f15652.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n},{\n  \"id\": 1,\n  \"name\": \"Copywriter\",\n  \"description\": \"Aprende el arte de la persuasión con la escritura orientada a obtener más ventas en redes sociales, blogs y publicidad.\",\n  \"detail\": \"Copywriter o redactor(a) publicitario(a) es la persona que trabaja en la creación de textos atractivos, con el fin de lograr acciones de venta o persuadir a los usuarios de adquirir o usar productos.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/badge-storytelling-fd2c9f48-d491-480b-97f8-1796eab64dbd.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n},{\n  \"id\": 1,\n  \"name\": \"Backend con Node.js\",\n  \"description\": \"Aprende Node.js para programar el backend de tus aplicaciones web con JavaScript.\",\n  \"detail\": \"Node.js es un entorno de ejecución de JavaScript fuera del navegador. Nos permite desarrollar el backend de nuestras aplicaciones web. Muchas empresas como Netflix, PayPal, Uber y Platzi usan Node.js gracias a su gran velocidad para programar y su alta escalabilidad.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/badge-fundamentos-nodejs-8fd9c0f4-562a-48e9-a85a-3a7db0fa384b.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n}\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "dcf9204c-dd57-4b67-836a-90963e400bd1",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "careers/4",
+      "responses": [
+        {
+          "uuid": "f17f4164-b008-487a-ab5b-5fef6c482105",
+          "body": "{\n  \"id\": 4,\n  \"name\": \"Contenido digital\",\n  \"description\": \"Si quieres ser parte de la creciente economía de creadores, necesitas dominar técnicas de producción audiovisual que destaquen tus contenidos. Adquiere los conocimientos necesarios para sobresalir en la industria de la creación y vivir de tu contenido, aprendiendo a sacar el máximo provecho a las plataformas digitales más utilizadas.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=1200,quality=50,format=auto/media/learningpath/emblems/923ac4f3-e51b-43c4-a928-cb5c3f28115e.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"roadmaps\": [\n    {\n  \"id\": 1,\n  \"name\": \"Introducción a la Creación Audiovisual\",\n  \"description\": \"Aprende los fundamentos de la creación de contenido audiovisual y especialízate luego en los perfiles profesionales de tu interés.\",\n  \"detail\": \"En la ruta de Introducción a la Creación Audiovisual de la Escuela de Contenido Audiovisual de Platzi podrás adquirir todos los conocimientos introductorios que necesitas para luego especializarte en algún rol profesional o habilidad en particular.\",\n  \"iconId\": \"https://static.platzi.com/media/learningpath/badges/a0786248-7d0b-4b2b-939b-d0d3c12ef151.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n},{\n  \"id\": 1,\n  \"name\": \"Periodista Digital\",\n  \"description\": \"Aprende sobre periodismo, entrevistas y técnicas de escritura para convertirte en periodista digital y llevar tus historias al mundo.\",\n  \"detail\": \"El periodismo digital o ciberperiodismo es el resultado de la convergencia de los diferentes medios de comunicación (prensa, radio y televisión) en uno solo que es Internet.El periodista digital se encarga de aprovechar todos los elementos y servicios que ofrece Internet a fin de ampliar y enriquecer la información en un sólo medio y de manera inmediata.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/og-posicionamiento-buscadores-df975616-d821-4e3a-92e0-c68952d322e8.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n},{\n  \"id\": 1,\n  \"name\": \"Creador/a de video\",\n  \"description\": \"Adquiere los conocimientos necesarios para convertirte en creador o creadora de videos de alto impacto.\",\n  \"detail\": \"En esta ruta adquirirás los conocimientos necesarios para convertirte en creador o creadora de video. Aprende técnicas de creación audiovisual, escritura y storytelling para elevar la calidad de tus videos.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/badge-escuela-produccion-audiovisual-c86aeaeb-d7d4-48f9-a009-becfafcb14ab.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n}\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "859c9630-e940-4da3-8955-1fdc360b4ab9",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "roadmaps/1",
+      "responses": [
+        {
+          "uuid": "b90f85e9-cc08-4772-b02a-41f6c3a3c675",
+          "body": "{\n  \"id\": 1,\n  \"name\": \"Backend, Arquitectura y Bases de Datos\",\n  \"description\": \"Especialízate en sistemas de backend, bases de datos y arquitecturas de servidores para crear aplicaciones web profesionales y altamente escalables.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=1200,quality=50,format=auto/media/learningpath/emblems/923ac4f3-e51b-43c4-a928-cb5c3f28115e.jpg\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"courses\": [\n    {\n  \"id\": 1,\n  \"name\": \"Curso de Introducción a MySQL\",\n  \"description\": \"Con el curso de SQL conocerás el lenguaje de consulta estructurada que te permitirá consultar de manera estructurada la información insertada en la base de datos.\",\n  \"detail\": \"Elabora tablas, cruza, elimina, modifica y consulta información. Aprende las funciones de MySQL como gestor de base de datos con el que podrás crear aplicaciones para ejecutar dichas funciones.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/1272-15ff4836-0221-4001-b945-5cf34bd65bab.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n},{\n  \"id\": 2,\n  \"name\": \"Fundamentos de Arquitectura de Software\",\n  \"description\": \"Complementa tu formación profesional en Desarrollo de Software, identifica el rol del arquitecto de software dentro de la organización.\",\n  \"detail\": \"Analiza requerimientos e identifica el estilo arquitectónico indicado para tu proyecto. Toma las mejores decisiones para desarrollar las aplicaciones y el software que tus clientes y usuarios necesitan.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/1247-4f5b5d04-4b56-4e64-bec2-db8fe3c0aa18.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n},{\n  \"id\": 3,\n  \"name\": \"Backend con Java\",\n  \"description\": \"Aprende desarrollo backend con Java, uno de los lenguaje de programación con mayor demanda laboral.\",\n  \"detail\": \"Java es uno de los lenguajes de programación con mayor demanda laboral gracias a su seguridad, portabilidad y facilidad de darle mantenimiento. Es usado por Google, Amazon, Uber y la mayoría de empresas financieras o bancarias del planeta.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/badge-cursobasicojavase-2c55da9d-3573-4bef-b071-60a4b13f60ae.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n}\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "ba9a85e6-f633-41a4-a686-6e7d6f06d241",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "roadmaps/2",
+      "responses": [
+        {
+          "uuid": "992f7acb-74e6-455f-9df8-800a7625597a",
+          "body": "{\n  \"id\": 2,\n  \"name\": \"QA y Automatización de Pruebas\",\n  \"description\": \"Desarrolla tests para asegurar la calidad de tu software. Domina la automatización de pruebas con herramientas como Cypress y Puppeteer.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/piezas-automatizacion-pruebas-ui-cypress_badge-df11ed0c-1876-4ece-9dcd-e25949f182a7.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"courses\": [\n    {\n  \"id\": 1,\n  \"name\": \"Curso de Automatización de Pruebas UI con Cypress\",\n  \"description\": \"¡Aprende Cypress, el framework más popular en automatización de pruebas a páginas web!\",\n  \"detail\": \"Da tus primeros paso interactuando con elementos HTML y creando tests para garantizar el correcto funcionamiento de tu website junto al profesor Javier Fuentes Mora.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/piezas-introduccion-automatizacion-pruebas-puppeteer_badge-532a2c27-59ef-414a-9383-.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n},{\n  \"id\": 1,\n  \"name\": \"Curso de Fundamentos de Pruebas de Software\",\n  \"description\": \"Deja que la calidad de tus proyectos hable por ti. Domina herramientas para poner a prueba tu desarrollo de software.\",\n  \"detail\": \"Haz seguimiento y reporta errores para entregar a tus clientes proyectos perfectos. Empieza a usar tester de software y conviértete en un desarrollador increíble.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/piezas-introduccion-automatizacion-pruebas_badge-294a0e65-9b5b-44c9-b402-e8c1ca7d9c.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n}\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "f4fa509e-25e3-43c7-9b33-6de97537d32f",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "roadmaps/3",
+      "responses": [
+        {
+          "uuid": "a55fef54-e510-4745-8477-768e757d11c6",
+          "body": "{\n  \"id\": 2,\n  \"name\": \"Fundamentos de Programación y Desarrollo Web\",\n  \"description\": \"La tecnología es ciencia aplicada a las necesidades humanas. Darle un uso práctico a la ciencia es lo que llamamos ingeniería. Y hoy en día medimos esa practicidad con modelos de negocio escalables. La ciencia no se convierte en tecnología sin un sistema de distribución de alto impacto (es decir, un negocio).Es cierto que la tecnología arruina empleos y negocios. Pero a cambio genera oportunidades en industrias y estilos de vida completamente nuevos.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/piezas-automatizacion-pruebas-ui-cypress_badge-df11ed0c-1876-4ece-9dcd-e25949f182a7.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"courses\": [\n    {\n  \"id\": 1,\n  \"name\": \"Curso profesional de Git\",\n  \"description\": \"¡Aprende Git, GitHub, GitLab y Bitbucket\",\n  \"detail\": \"Da tus primeros paso interactuando con elementos HTML y creando tests para garantizar el correcto funcionamiento de tu website junto al profesor Javier Fuentes Mora.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/piezas-introduccion-automatizacion-pruebas-puppeteer_badge-532a2c27-59ef-414a-9383-.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n},{\n  \"id\": 1,\n  \"name\": \"Curso de Patrones de diseño en Programación Orientada a Objetos\",\n  \"description\": \"Deja que la calidad de tus proyectos hable por ti. Domina herramientas para poner a prueba tu desarrollo de software.\",\n  \"detail\": \"Haz seguimiento y reporta errores para entregar a tus clientes proyectos perfectos. Empieza a usar tester de software y conviértete en un desarrollador increíble.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/piezas-introduccion-automatizacion-pruebas_badge-294a0e65-9b5b-44c9-b402-e8c1ca7d9c.png\",\n  \"active\": true,\n  \"totalRoadMaps\": 5,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"totalCourses\": 4\n}\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "7c2b06b2-6166-434e-bbad-408fc7b34bc1",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "courses/1",
+      "responses": [
+        {
+          "uuid": "372c4088-a5e3-4cd8-856c-42809bbd173f",
+          "body": "{\n  \"id\": 1,\n  \"name\": \"Curso de Introducción a MySQL\",\n  \"description\": \"Con el curso de SQL conocerás el lenguaje de consulta estructurada que te permitirá consultar de manera estructurada la información insertada en la base de datos. Elabora tablas, cruza, elimina, modifica y consulta información.\",\n  \"active\": true,\n  \"totalClasses\": 10,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"classes\": [\n    {\n  \"id\": 1,\n  \"name\": \"Qué es MySQL\",\n  \"description\": \"Curso de prueba\",\n  \"videoUrl\": \"youtbe.com\",\n  \"duration\": 14,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 2,\n  \"name\": \"Instalando MySQL con Docker\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 25,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 3,\n  \"name\": \"Comando CREATE\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 10,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 4,\n  \"name\": \"Comando INSERT\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 8,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 5,\n  \"name\": \"Su majestad el SELECT\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 12,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 6,\n  \"name\": \"Comando JOIN\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 15,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 7,\n  \"name\": \"Tipos de Join\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 11,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 8,\n  \"name\": \"Comandos UPDATE y DELETE\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 10,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 9,\n  \"name\": \"Bases de datos para Big Data\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 10,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 10,\n  \"name\": \"MySQL en la nube\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 10,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "d5840e7b-3be4-4e96-a496-43a2aa59400a",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "courses/2",
+      "responses": [
+        {
+          "uuid": "189f959f-3e00-4b78-92fb-e0c95034dab0",
+          "body": "{\n  \"id\": 2,\n  \"name\": \"Fundamentos de Arquitectura de Software\",\n  \"description\": \"Complementa tu formación profesional en Desarrollo de Software, identifica el rol del arquitecto de software dentro de la organización. Analiza requerimientos e identifica el estilo arquitectónico indicado para tu proyecto.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/1247-4f5b5d04-4b56-4e64-bec2-db8fe3c0aa18.png\",\n  \"active\": true,\n  \"totalClasses\": 8,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"classes\": [\n    {\n  \"id\": 11,\n  \"name\": \"Introducción del curso\",\n  \"description\": \"Curso de prueba\",\n  \"videoUrl\": \"youtbe.com\",\n  \"duration\": 14,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 12,\n  \"name\": \"Etapas del proceso de desarrollo\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 25,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 13,\n  \"name\": \"Dificultades en el desarrollo\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 10,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 14,\n  \"name\": \"Roles de metologias tradicionales\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 8,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 15,\n  \"name\": \"Qué es la arquitectura de software\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 12,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 16,\n  \"name\": \"Requerimientos\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 15,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 17,\n  \"name\": \"Riesgos\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 11,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 18,\n  \"name\": \"Conclusiones del curso\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 10,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "1109fd68-48d0-4e93-8e87-0b5c41739b9c",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "courses/3",
+      "responses": [
+        {
+          "uuid": "9ce1076b-9112-42b0-a471-96b2ae4d7764",
+          "body": "{\n  \"id\": 3,\n  \"name\": \"Backend con Java\",\n  \"description\": \"Java es uno de los lenguajes de programación con mayor demanda laboral gracias a su seguridad, portabilidad y facilidad de darle mantenimiento. Es usado por Google, Amazon, Uber y la mayoría de empresas financieras o bancarias del planeta.\",\n  \"iconId\": \"https://static.platzi.com/cdn-cgi/image/width=768,quality=50,format=auto/media/achievements/1247-4f5b5d04-4b56-4e64-bec2-db8fe3c0aa18.png\",\n  \"active\": true,\n  \"totalClasses\": 10,\n  \"createDate\": null,\n  \"updateDate\": null,\n  \"classes\": [\n    {\n  \"id\": 21,\n  \"name\": \"Qué es Java\",\n  \"description\": \"Curso de prueba\",\n  \"videoUrl\": \"youtbe.com\",\n  \"duration\": 14,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 22,\n  \"name\": \"Versiones de Java y JDK\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 25,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 23,\n  \"name\": \"Configurando el entorno\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 20,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 24,\n  \"name\": \"Variables\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 8,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 25,\n  \"name\": \"Clases\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 12,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 26,\n  \"name\": \"Metodos\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 15,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 27,\n  \"name\": \"Interfaces\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 11,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 28,\n  \"name\": \"Herencia\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 12,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 29,\n  \"name\": \"Polimorfismo\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 12,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n},{\n  \"id\": 30,\n  \"name\": \"Bonus: Tu primera API REST con Java\",\n  \"description\": \"Curso de prueba 2\",\n  \"duration\": 12,\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}\n    ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "248dc4ac-1a19-4473-856a-36d25bfb7b33",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/1",
+      "responses": [
+        {
+          "uuid": "6751d7fd-4f86-416d-b989-322090b0d49c",
+          "body": "{\n  \"id\": 1,\n  \"name\": \"Qué es MySQL\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Laura Perez\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 4,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/anncode_f3140409-7223-44d4-8415-4b922a1b23c9.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "cb48d690-8b7c-4e28-bc9a-eb4e7e7287ae",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/2",
+      "responses": [
+        {
+          "uuid": "48627b47-17f8-42ae-b6ff-d0a7eed561ad",
+          "body": "{\n  \"id\": 2,\n  \"name\": \"Instalando MySQL con Docker\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Laura Perez\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 4,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/anncode_f3140409-7223-44d4-8415-4b922a1b23c9.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "e8054dae-abe1-4d49-a186-ad641128047f",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/3",
+      "responses": [
+        {
+          "uuid": "4f169471-ac58-4d66-b4d2-18cb03dbdba4",
+          "body": "{\n  \"id\": 3,\n  \"name\": \"Comando CREATE\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Laura Perez\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 20,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/anncode_f3140409-7223-44d4-8415-4b922a1b23c9.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "a1d56191-c038-4fe3-b0d5-e6dbee839a5b",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/4",
+      "responses": [
+        {
+          "uuid": "08635b71-8fda-4294-9be1-057cef293c26",
+          "body": "{\n  \"id\": 4,\n  \"name\": \"Comando INSERT\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Laura Perez\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 14,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/anncode_f3140409-7223-44d4-8415-4b922a1b23c9.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "b2cedd4e-d42f-48db-a155-24da3c6d7f32",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/5",
+      "responses": [
+        {
+          "uuid": "2089d8ff-ff99-4240-be25-8eae03332744",
+          "body": "{\n  \"id\": 5,\n  \"name\": \"Su Majestad el SELECT\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Laura Perez\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 5,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/anncode_f3140409-7223-44d4-8415-4b922a1b23c9.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "a8ccbc3b-47c1-4dfc-bcef-01eece5ef934",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/6",
+      "responses": [
+        {
+          "uuid": "aa520421-de26-4883-82dc-96dd525aa176",
+          "body": "{\n  \"id\": 6,\n  \"name\": \"Comando JOIN\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Laura Perez\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 8,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/anncode_f3140409-7223-44d4-8415-4b922a1b23c9.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "73b87c4b-65a7-4199-b608-2e9ebf824e3c",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/7",
+      "responses": [
+        {
+          "uuid": "d74ffbe9-ddad-44f6-949b-cf93a45bbcdf",
+          "body": "{\n  \"id\": 7,\n  \"name\": \"Tipos de JOIN\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Laura Perez\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 11,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/anncode_f3140409-7223-44d4-8415-4b922a1b23c9.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "11cc1c2e-68bd-479a-ade2-6a8ff6005a94",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/8",
+      "responses": [
+        {
+          "uuid": "5f59cb47-df47-4b60-865c-90d8a2f66ae5",
+          "body": "{\n  \"id\": 8,\n  \"name\": \"Comandos UPDATE y DELETE\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Laura Perez\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 4,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/anncode_f3140409-7223-44d4-8415-4b922a1b23c9.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "bb85c4c5-2946-401c-a32e-9e4200bbe741",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/9",
+      "responses": [
+        {
+          "uuid": "7d90c454-d98e-44f8-aaf2-e649bbc5e13b",
+          "body": "{\n  \"id\": 9,\n  \"name\": \"Bases de Datos para Big Data\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Laura Perez\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 10,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/anncode_f3140409-7223-44d4-8415-4b922a1b23c9.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "de949b1f-17e4-4c73-83e7-0c0db9e748ae",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/10",
+      "responses": [
+        {
+          "uuid": "53bc0d7c-767f-4460-a4d7-3eb10ef59def",
+          "body": "{\n  \"id\": 10,\n  \"name\": \"MySQL en la nube\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Laura Perez\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 4,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/Oz_6133b16a-b3c5-4a68-9a39-1bb21701ac53\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "402d8a5b-ba64-4fb9-9af8-aad449436619",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/11",
+      "responses": [
+        {
+          "uuid": "71dfec02-860d-4256-87ab-05c15e6c8b58",
+          "body": "{\n  \"id\": 10,\n  \"name\": \"Introducción al curso\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Luis Fernando Rios\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 4,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/Oz_6133b16a-b3c5-4a68-9a39-1bb21701ac53\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "1599ab1b-8f63-478f-a2ad-de36a66e5957",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/12",
+      "responses": [
+        {
+          "uuid": "206c0705-d11d-4e68-807b-7ba142f69839",
+          "body": "{\n  \"id\": 11,\n  \"name\": \"Etapas del proceso de desarrollo\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Luis Fernando Rios\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 4,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/Oz_6133b16a-b3c5-4a68-9a39-1bb21701ac53\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "4831533e-fa76-4581-be68-37405c864ff5",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/13",
+      "responses": [
+        {
+          "uuid": "0a835970-3ed8-412b-b21a-c1344f6bc12d",
+          "body": "{\n  \"id\": 12,\n  \"name\": \"Dificultades en el desarrollo\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Luis Fernando Rios\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 30,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/Oz_6133b16a-b3c5-4a68-9a39-1bb21701ac53\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "daf70fc9-24d4-4d34-9f44-f4c8a407fd89",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/14",
+      "responses": [
+        {
+          "uuid": "09a40fec-b10c-4cfe-acf8-b467e7ff24e2",
+          "body": "{\n  \"id\": 13,\n  \"name\": \"Roles de metodologias tradicionales\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Luis Fernando Rios\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 4,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/Oz_6133b16a-b3c5-4a68-9a39-1bb21701ac53\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "b9ae0589-f910-4eea-9d36-78ba3e0a0df3",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/15",
+      "responses": [
+        {
+          "uuid": "f72ab81f-38d5-4c79-bbd5-e912abe349cf",
+          "body": "{\n  \"id\": 14,\n  \"name\": \"Que es la arquitectura de software\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Luis Fernando Rios\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 25,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/Oz_6133b16a-b3c5-4a68-9a39-1bb21701ac53\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "5b6fee6d-cba5-4d65-b178-3d2fee494b23",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/16",
+      "responses": [
+        {
+          "uuid": "3cc92004-537a-4cb5-aef2-e3f6056e7c97",
+          "body": "{\n  \"id\": 15,\n  \"name\": \"Requerimientos\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Luis Fernando Rios\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 4,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/Oz_6133b16a-b3c5-4a68-9a39-1bb21701ac53\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "0ac223ba-2a7a-440f-b8c8-37027ef70662",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/17",
+      "responses": [
+        {
+          "uuid": "6721bd37-9eef-4105-b758-5410f968353a",
+          "body": "{\n  \"id\": 16,\n  \"name\": \"Riesgos\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Luis Fernando Rios\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 16,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/Oz_6133b16a-b3c5-4a68-9a39-1bb21701ac53\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "fc08d52b-c808-48cc-97b6-38eb54fdbac7",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/18",
+      "responses": [
+        {
+          "uuid": "964aaa70-8007-47a3-a06f-d47a4acdd17a",
+          "body": "{\n  \"id\": 17,\n  \"name\": \"Conclusiones del curso\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Luis Fernando Rios\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 24,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/Oz_6133b16a-b3c5-4a68-9a39-1bb21701ac53\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "8e83593c-dbcd-4769-87c7-f54b72c43ea5",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/21",
+      "responses": [
+        {
+          "uuid": "666c4343-45bf-48e5-bca3-4f3f7964597b",
+          "body": "{\n  \"id\": 21,\n  \"name\": \"Qué es Java\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Andres Grisales\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 4,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/avatars/albertramirez_d3239fd8-49e3-481d-9cda-351b47de1d16.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "bea36366-9336-47e7-937a-6bdaafac4d48",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/22",
+      "responses": [
+        {
+          "uuid": "b46311ab-9e72-4314-9138-380e5ff6a512",
+          "body": "{\n  \"id\": 22,\n  \"name\": \"Versiones de Java y JDK\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Andres Grisales\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 12,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/avatars/albertramirez_d3239fd8-49e3-481d-9cda-351b47de1d16.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "eb0ce717-da5f-4ef2-a2b7-8c169b86e8c8",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/23",
+      "responses": [
+        {
+          "uuid": "a452c6d6-cc39-47a2-b8cd-7bc601c0ac55",
+          "body": "{\n  \"id\": 23,\n  \"name\": \"Configuración del entorno\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Andres Grisales\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 4,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/avatars/albertramirez_d3239fd8-49e3-481d-9cda-351b47de1d16.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "f4746680-6795-4f60-8292-a717f7e5184e",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/24",
+      "responses": [
+        {
+          "uuid": "e8f5883f-5e44-4c77-8e01-ddb112a7220b",
+          "body": "{\n  \"id\": 24,\n  \"name\": \"Variables\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Andres Grisales\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 14,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/avatars/albertramirez_d3239fd8-49e3-481d-9cda-351b47de1d16.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "833d8f23-f8f4-4622-a1a5-ff0100586cab",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/25",
+      "responses": [
+        {
+          "uuid": "fb09d88b-be3b-4c93-baf9-eaf8dd7dc16f",
+          "body": "{\n  \"id\": 25,\n  \"name\": \"Clases\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Andres Grisales\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 10,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/avatars/albertramirez_d3239fd8-49e3-481d-9cda-351b47de1d16.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "9eda9c2c-a433-4816-b62b-baa8c2503598",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/26",
+      "responses": [
+        {
+          "uuid": "3bbb7fd3-b083-4fae-9709-ffc2b0bc8821",
+          "body": "{\n  \"id\": 26,\n  \"name\": \"Metodos\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Andres Grisales\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 10,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/avatars/albertramirez_d3239fd8-49e3-481d-9cda-351b47de1d16.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "1c339c2b-6217-4083-9235-7817a2e68742",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/27",
+      "responses": [
+        {
+          "uuid": "538e2bc2-0497-47c3-bbf1-778325d6d992",
+          "body": "{\n  \"id\": 27,\n  \"name\": \"Interfaces\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Andres Grisales\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 20,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/avatars/albertramirez_d3239fd8-49e3-481d-9cda-351b47de1d16.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "27ac71c0-a1df-40fc-b330-6cb6c0002c43",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/28",
+      "responses": [
+        {
+          "uuid": "3b624aaf-edf2-4da7-8a7d-92bc5b652243",
+          "body": "{\n  \"id\": 28,\n  \"name\": \"Herencia\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Andres Grisales\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 15,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/avatars/albertramirez_d3239fd8-49e3-481d-9cda-351b47de1d16.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "8471b5b7-743a-4d44-a67f-fafef66c3ac8",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/29",
+      "responses": [
+        {
+          "uuid": "087a05d0-74ca-4aff-ac71-b455ed7859f6",
+          "body": "{\n  \"id\": 29,\n  \"name\": \"Polimorfismo\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Andres Grisales\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 4,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/avatars/albertramirez_d3239fd8-49e3-481d-9cda-351b47de1d16.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "68d12f13-87ae-4b2d-947a-18f4f5f7d631",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "classes/30",
+      "responses": [
+        {
+          "uuid": "8dc98009-68f2-49f6-964d-195073da6870",
+          "body": "{\n  \"id\": 30,\n  \"name\": \"Bonus: tu primera API REST con Java\",\n  \"description\": \"Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final\",\n  \"teacherName\": \"Andres Grisales\",\n  \"videoUrl\": \"https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4\",\n  \"duration\": 8,\n  \"teacherPictureUrl\": \"https://static.platzi.com/media/avatars/avatars/albertramirez_d3239fd8-49e3-481d-9cda-351b47de1d16.jpg\",\n  \"active\": true,\n  \"createDate\": null,\n  \"updateDate\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
