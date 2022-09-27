@@ -114,7 +114,7 @@ fun Career(career: MyCareer, navController: NavController) {
                 .padding(start = 8.dp)
                 .fillMaxWidth()
         ) {
-            Text(text = career.name)
+            Text(text = career.name, fontWeight = FontWeight.ExtraBold)
             Spacer(modifier = Modifier.height(16.dp))
             Text(text = career.description)
         }
